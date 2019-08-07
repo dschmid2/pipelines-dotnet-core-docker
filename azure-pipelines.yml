@@ -21,3 +21,9 @@ steps:
     containerRegistry: 'dockerhub1'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub1'
+    command: 'push'
+
