@@ -19,10 +19,13 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub1'
+    repository: pipelines-dotnet-core-docker
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub1'
+    repository: pipelines-dotnet-core-docker
     command: 'push'
+
