@@ -25,5 +25,4 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub1'
-    repository: 'allmyjobs'
     command: 'push'
