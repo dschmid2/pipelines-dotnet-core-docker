@@ -26,6 +26,15 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub1'
+    command: 'login'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub1'
     repository: pipelines-dotnet-core-docker
     command: 'push'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub1'
+    command: 'logout'
