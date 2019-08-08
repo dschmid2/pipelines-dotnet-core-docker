@@ -17,24 +17,28 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: Docker@2
+  displayName: 'Build docker'
   inputs:
     containerRegistry: 'dockerhub1'
-    repository: pipelines-dotnet-core-docker
+    repository: dschmid2/pipelines-dotnet-core-docker
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
 - task: Docker@2
+  displayName: 'Login to docker'
   inputs:
     containerRegistry: 'dockerhub1'
     command: 'login'
 
 - task: Docker@2
+  displayName: 'Push to docker'
   inputs:
     containerRegistry: 'dockerhub1'
-    repository: pipelines-dotnet-core-docker
+    repository: dschmid2/pipelines-dotnet-core-docker
     command: 'push'
 
 - task: Docker@2
+  displayName: 'Logout docker'
   inputs:
     containerRegistry: 'dockerhub1'
     command: 'logout'
