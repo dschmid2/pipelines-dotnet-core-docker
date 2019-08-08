@@ -20,7 +20,7 @@ steps:
   displayName: 'Build docker'
   inputs:
     containerRegistry: 'dockerhub1'
-    repository: dschmid2/pipelines-dotnet-core-docker
+    repository: ddschmid/pipelines-dotnet-core-docker
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
@@ -34,7 +34,7 @@ steps:
   displayName: 'Push to docker'
   inputs:
     containerRegistry: 'dockerhub1'
-    repository: dschmid2/pipelines-dotnet-core-docker
+    repository: ddschmid/pipelines-dotnet-core-docker
     command: 'push'
 
 - task: Docker@2
